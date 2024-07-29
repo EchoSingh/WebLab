@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Paragraph Stacking</title>
+    <link rel="stylesheet" type="text/css" href="stacking.css"/>
+    <script type="text/javascript">
+        var toplayer = "layer4";
+        function stack(totop) {
+            var oldtop = document.getElementById(toplayer).style;
+            var newtop = document.getElementById(totop).style;
+            oldtop.zIndex = "0";
+            newtop.zIndex = "10";
+            toplayer = document.getElementById(totop).id;
+        }
+    </script>
+</head>
+<body style="background-color: teal;">
+    <h1>Program to demonstrate usage of stacking of paragraph</h1>
+    <div class="ls1" id="layer1" onmouseover="stack('layer1')">
+        <b>… FIRST PARAGRAPH..DOWN ONE (Pink) …</b>
+    </div>
+    <div class="ls2" id="layer2" onmouseover="stack('layer2')">
+        <b>… SECOND PARA..LAST BUT ONE (Blue) …</b>
+    </div>
+    <div class="ls3" id="layer3" onmouseover="stack('layer3')">
+        <b>… THIRD PARA..(Gray) …</b>
+    </div>
+    <div class="ls4" id="layer4" onmouseover="stack('layer4')">
+        <b>… TOP LAYER..FOURTH PARAGRAPH…(Yellow) …</b>
+    </div>
+</body>
+</html>
