@@ -1,0 +1,58 @@
+name: Zip LabPrograms
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  zip-labprograms:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository content
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install zip utility
+      run: sudo apt-get install zip
+
+    - name: Zip LabProgram1
+      run: zip -r LabProgram1.zip LabProgram1/
+    
+    - name: Zip LabProgram2
+      run: zip -r LabProgram2.zip LabProgram2/
+    
+    - name: Zip LabProgram3
+      run: zip -r LabProgram3.zip LabProgram3/
+    
+    - name: Zip LabProgram4
+      run: zip -r LabProgram4.zip LabProgram4/
+    
+    - name: Zip LabProgram5
+      run: zip -r LabProgram5.zip LabProgram5/
+    
+    - name: Zip LabProgram6
+      run: zip -r LabProgram6.zip LabProgram6/
+    
+    - name: Zip LabProgram7
+      run: zip -r LabProgram7.zip LabProgram7/
+    
+    - name: Zip LabProgram8
+      run: zip -r LabProgram8.zip LabProgram8/
+    
+    - name: Zip LabProgram9
+      run: zip -r LabProgram9.zip LabProgram9/
+
+    - name: Commit and push zip files
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add *.zip
+        git commit -m "Add zipped LabProgram directories"
+        git push
