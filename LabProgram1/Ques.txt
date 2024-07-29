@@ -1,0 +1,1 @@
+Create a XHTML document to display a table, an image, hyper link and different lists available in XHTML.
