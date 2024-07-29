@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript - Grow and Shrink Text</title>
+    <script type="text/javascript">
+        var c = 0, t1;
+
+        function start() {
+            t1 = window.setInterval(incr, 100);
+        }
+
+        function incr() {
+            c = c + 1;
+            var t = document.getElementById('t');
+            t.innerHTML = "TEXT-GROWING: " + c + "pt";
+            t.style.fontSize = c + "pt";
+            t.style.color = "red";
+
+            if (c >= 50) {
+                window.clearInterval(t1);
+                alert("Font Size Reached 50pt. Text will Now Shrink");
+                t1 = window.setInterval(decr, 100);
+            }
+        }
+
+        function decr() {
+            c = c - 1;
+            var t = document.getElementById('t');
+            t.innerHTML = "TEXT-SHRINKING: " + c + "pt";
+            t.style.fontSize = c + "pt";
+            t.style.color = "blue";
+
+            if (c <= 5) {
+                window.clearInterval(t1);
+            }
+        }
+    </script>
+</head>
+<body bgcolor="#ffdead" onload="start()">
+    <center><p id="t"></p></center>
+</body>
+</html>
