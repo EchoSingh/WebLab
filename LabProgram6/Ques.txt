@@ -1,0 +1,1 @@
+Develop and demonstrate, using JavaScript, a XHTML document to make an image toggle on click of a button.
