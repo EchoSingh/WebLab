@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Program 4: 0-10 Square and Cubes</title>
+    <style>
+        table {
+            color: #333; /* Lighten up font color */
+            font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+            width: 640px;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        td, th {
+            border: 1px solid #CCC; /* Make cells a bit taller */
+            height: 30px;
+        }
+        th {
+            background: #2676af; /* Light grey background */
+            font-weight: bold; /* Make sure they're bold */
+        }
+        td {
+            background: #FAFAFA; /* Lighter grey background */
+            text-align: center; /* Center our text */
+        }
+    </style>
+    <script type="text/javascript">
+        function generateTable() {
+            var tableHTML = "<center><table>";
+            tableHTML += "<tr><th>Number</th><th>Square</th><th>Cube</th></tr>";
+            for (var n = 0; n <= 10; n++) {
+                tableHTML += "<tr><td>" + n + "</td><td>" + n * n + "</td><td>" + n * n * n + "</td></tr>";
+            }
+            tableHTML += "</table></center>";
+            document.getElementById('tableContainer').innerHTML = tableHTML;
+        }
+
+        window.onload = generateTable;
+    </script>
+</head>
+<body>
+    <div id="tableContainer"></div>
+</body>
+</html>
