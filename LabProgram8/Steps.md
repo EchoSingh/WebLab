@@ -40,7 +40,7 @@ sudo systemctl restart apache2
 Install PHP and Perl modules.
 
 ```sh
-sudo apt install php7.4-cgi
+sudo apt install php-cgi
 sudo apt install mysql-server
 sudo apt install -y libdbd-mysql-perl
 ```
@@ -50,7 +50,7 @@ sudo apt install -y libdbd-mysql-perl
 Confirm that MySQL is installed correctly.
 
 ```sh
-mysql -u root -p
+sudo mysql -u root 
 exit
 ```
 
@@ -64,7 +64,9 @@ cd /usr/lib/cgi-bin
 
 ### 7. Save the Perl Script
 
-Save the following Perl script as `greeting.pl` in the `cgi-bin` directory.
+create perl file using command `sudo nano greeting.pl`
+
+Save the following Perl script in `greeting.pl` in the `cgi-bin` directory.
 
 ```perl
 #!/usr/bin/perl
